@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://qwan6a02q4gy"]
+
+[ext_resource type="Texture2D" uid="uid://dnlwunpauer1f" path="res://assets/TreeOakA.png" id="1_61tkr"]
+[ext_resource type="Script" path="res://world.gd" id="1_f4csb"]
+[ext_resource type="Texture2D" uid="uid://b77h48tadytmi" path="res://assets/Gazelle_east.png" id="2_x32jg"]
+[ext_resource type="Script" path="res://GazelleEast.gd" id="2_x642v"]
+[ext_resource type="Script" path="res://d.gd" id="5_4n0nw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_65afb"]
+radius = 20.0
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_f4csb")
+
+[node name="GazelleEast" type="CharacterBody2D" parent="."]
+position = Vector2(178, -2)
+script = ExtResource("2_x642v")
+
+[node name="GazelleEast" type="Sprite2D" parent="GazelleEast"]
+texture = ExtResource("2_x32jg")
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="GazelleEast"]
+position = Vector2(0, 21)
+shape = SubResource("CircleShape2D_65afb")
+
+[node name="TreeOakA" type="Sprite2D" parent="."]
+position = Vector2(771, 184)
+texture = ExtResource("1_61tkr")
+
+[node name="TreeOakA2" type="Sprite2D" parent="."]
+position = Vector2(-157, 295)
+texture = ExtResource("1_61tkr")
+
+[node name="TreeOakA3" type="Sprite2D" parent="."]
+position = Vector2(-302, 488)
+texture = ExtResource("1_61tkr")
+
+[node name="TreeOakA4" type="Sprite2D" parent="."]
+position = Vector2(-148, 461)
+texture = ExtResource("1_61tkr")
+
+[node name="TreeOakA5" type="Sprite2D" parent="."]
+position = Vector2(-4, 495)
+texture = ExtResource("1_61tkr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2(0.1, 0.1)
+script = ExtResource("5_4n0nw")
